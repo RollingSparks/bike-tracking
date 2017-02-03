@@ -1,0 +1,46 @@
+/* -------------------------------------------------- */
+/*    Lists
+/* -------------------------------------------------- */
+
+.c-appContent {
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  ul li,
+  ol li {
+    padding-left: 50px;
+    position: relative;
+  }
+
+  ul li {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 12px;
+      border-radius: 20px;
+      width: 4px;
+      height: 4px;
+      background-color: c('black-50');
+    }
+  }
+
+  ol {
+    counter-reset: ol-counter;
+  }
+
+  ol li {
+    counter-increment: ol-counter;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: counter(ol-counter) '.';
+      text-align: right;
+      width: 50px;
+      padding-right: s(1);
+    }
+  }
+}

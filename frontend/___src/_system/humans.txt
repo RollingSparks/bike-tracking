@@ -1,0 +1,20 @@
+/* TEAM */
+Author:              RollingSparks Collective
+Contact:             undefined
+Website:             http://...
+Twitter:             @davidhellmann
+Location:            Linz, Austria
+Contributions:       Design, HTML, Sass (CSS), JS, Twig
+
+/* SITE */
+Language:            English
+Standards:           HTML5, CSS3, ES6
+Components:          Modernizr, jQuery, etc.
+CMS:                 Prototyping
+Tools:               Gulp, NPM, Yeoman
+IDE:                 PHPStorm
+Built on:            macOS
+
+/* THANKS */
+Name:                Sascha Fuchs
+Name:                Martin Herweg

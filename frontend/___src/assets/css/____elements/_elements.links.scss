@@ -1,0 +1,12 @@
+/* -------------------------------------------------- */
+/*    Links
+/* -------------------------------------------------- */
+
+a {
+  color: c('free-speech-red');
+  transition: all 0.25s ease('out-cubic');
+
+  &:hover {
+    color: darken(c('free-speech-red'), 10%);
+  }
+}
