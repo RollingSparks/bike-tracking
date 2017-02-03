@@ -75,6 +75,7 @@
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.0.0",
+    "leaflet": "^1.0.3",
     "postcss-assets": "^4.1.0",
     "postcss-flexbugs-fixes": "^2.0.0",
     "postcss-responsive-type": "^0.3.3",

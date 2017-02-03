@@ -1,6 +1,6 @@
 <template>
   <div class="vue__inner">
-    <h2>Hello World</h2>
+    <h2>Hello World Test</h2>
     <p>
       {{ message }}
     </p>
@@ -19,4 +19,5 @@
       }
     }
   }
+
 </script>

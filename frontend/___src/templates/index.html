@@ -12,18 +12,20 @@
 {% endblock %}
 
 
+{% block appHeader %}
+{% endblock %}
 
 {% block appContent %}
-  <h1>{{ index.headline }}</h1>
-  <p>
-    {{ index.intro }}
-  </p>
+  <!--<h1>{{ index.headline }}</h1>-->
+  <!--<p>-->
+    <!--{{ index.intro }}-->
+  <!--</p>-->
 
-  
-  <div id="app" class="vue">
-    <hello></hello>
-  </div>
-  
+  <div id="app">
+    <map-container></map-container>
+    </div>
 
 {% endblock %}
 
+{% block appFooter %}
+{% endblock %}
