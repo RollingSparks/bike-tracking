@@ -1,6 +1,7 @@
 var httpProxy = require('http-proxy');
 var express = require('express');
 var app = express();
+var conf = require('./conf.js');
 
 /**
  * curl -X GET --header 'Accept: application/json'
@@ -14,7 +15,7 @@ app.all("/api/*", function(req,res) {
     secure: true,
     changeOrigin: true,
     headers: {
-      'Authorization': 'key ttn-account-v2.HzLYlXzyjFkNEl5y7oljbfOGzoYPZoRFHCRApkRgkZg',
+      'Authorization': conf.ttnAuthKey,
     }
   });
 });
