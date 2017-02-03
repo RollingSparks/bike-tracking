@@ -1,0 +1,122 @@
+{
+  "src": {
+    "assets":               "___src/assets/",
+    "js":                   "___src/assets/js/",
+    "css":                  "___src/assets/css/",
+    "fonts":                "___src/assets/fonts/",
+    "images": {
+      "base":               "___src/assets/images/",
+      "bitmap": {
+        "base":             "___src/assets/images/bitmap/"
+      },
+      "svg": {
+        "base":             "___src/assets/images/svg/",
+        "single":           "___src/assets/images/svg/single/",
+        "sprite":           "___src/assets/images/svg/sprite/"
+      }
+    },
+    "templates":            "___src/templates/",
+    "system":               "___src/_system/",
+    "dataDir":              "___src/_data/",
+    "dataFile":             "___src/_data/global.json"
+  },
+
+  "dist": {
+    
+    "base":                 "___dist/",
+    "markup":               "___dist/",
+    "browserSyncDir":       "___dist/",
+    "assets":               "___dist/assets/",
+    "js":                   "___dist/assets/js/",
+    "css":                  "___dist/assets/css/",
+    "fonts":                "___dist/assets/fonts/",
+    "images": {
+      "base":               "___dist/assets/images/",
+      "bitmap": {
+        "base":             "___dist/assets/images/bitmap/"
+      },
+      "svg": {
+        "base":             "___dist/assets/images/svg/",
+        "single":           "___dist/assets/images/svg/single/",
+        "sprite":           "___dist/assets/images/svg/sprite/"
+      }
+    }
+    
+  },
+
+  "css": {
+    "sourcemap": true,
+    "prefix": [
+      "last 2 version"
+    ]
+  },
+
+  "browsersync": {
+    "openbrowser": true,
+    
+    "proxy": false
+    
+  },
+
+  "files": {
+    "systemFiles": [
+      "___src/_system/.htaccess",
+      "___src/_system/humans.txt",
+      "___src/_system/robots.txt"
+    ],
+    "jsApp": {
+      "srcName": "app.js",
+      "distName": "app.min.js"
+    }
+  },
+
+  "modernizr": {
+    "excludeTests": [
+      "hidden"
+    ],
+    "options": [
+      "setClasses",
+      "addTest",
+      "fnBind"
+    ],
+    "tests": [
+      "backgroundblendmode",
+      "bgsizecover",
+      "touchevents",
+      "rgba"
+    ]
+  },
+
+  "minify": {
+    "images": {
+      "optimizationLevel": 3,
+      "jpegCompress": {
+        "loops": 3,
+        "min": 60,
+        "max": 70
+      },
+      "pngquant": {
+        "quality": "75-88",
+        "speed": 4
+      },
+      "svgoPlugins": [
+        {"cleanupIDs": false},
+        {"removeComments": true},
+        {"removeViewBox": false},
+        {"removeDesc": true},
+        {"removeTitle": true},
+        {"removeUselessDefs": false},
+        {"removeDoctype": true},
+        {"removeEmptyText": true},
+        {"removeUnknownsAndDefaults": true},
+        {"removeEmptyContainers": true},
+        {"collapseGroups": true},
+        {"sortAttrs": true},
+        {"removeUselessStrokeAndFill": true},
+        {"convertStyleToAttrs": true}
+      ],
+      "progressive": true,
+      "interlaced": true
+    }
+  }
+}

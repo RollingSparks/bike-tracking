@@ -1,0 +1,6 @@
+# robotstxt.org
+
+User-agent: *
+Disallow: /config/
+Disallow: /vendor/
+Disallow: /templates/

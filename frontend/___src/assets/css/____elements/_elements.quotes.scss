@@ -1,0 +1,22 @@
+/* -------------------------------------------------- */
+/*    Quotes
+/* -------------------------------------------------- */
+
+blockquote {
+  margin: vr(2) 0;
+
+  p {
+    @include ft(fs('ms2'), fs('ms3'));
+    font-weight: 700;
+    font-style: italic;
+    font-family: ff('headline');
+  }
+
+  footer {
+    /* empty */
+
+    cite {
+      /* empty */
+    }
+  }
+}

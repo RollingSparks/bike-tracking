@@ -1,20 +1,28 @@
-# EditorConfig helps developers define and maintain consistent
-# coding styles between different editors and IDEs
 # http://editorconfig.org
 
 root = true
 
+
+# Default Settings
 [*]
-
-# Change these settings to your own preference
-indent_style = space
-indent_size = 2
-
-# We recommend you to keep these unchanged
-end_of_line = lf
 charset = utf-8
-trim_trailing_whitespace = true
+indent_size = 2
+indent_style = space
+end_of_line = lf
 insert_final_newline = true
+trim_trailing_whitespace = true
 
+
+# PHP Settings
+[*.php]
+indent_size = 4
+
+
+# PHP Settings
+[*.js]
+indent_size = 4
+
+
+# Markdown Settings
 [*.md]
 trim_trailing_whitespace = false

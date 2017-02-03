@@ -1,0 +1,63 @@
+{#
+  Master Layout
+  --------------------------------------------------
+
+  This i the basic layout. Feel free to modify
+#}
+
+
+{# Include Macros #}
+{% import '../_macros/_macros.html' as _m %}
+
+
+<!DOCTYPE html>
+<html class="" lang="de">
+<head>
+  <title>{% block appTitle %}DEVELOPMENT &mdash; dhBoilerplate{% endblock %}</title>
+
+  {# Critical CSS #}
+  <style>
+  {% include '../critical.min.css.html' %}
+  </style>
+
+  {# Preloader #}
+  {% include '../_partials/_global/_preloader.html' %}
+
+  {# Meta #}
+  {% include '../_partials/_header/_meta.html' %}
+
+  {# Scripts #}
+  {% include '../_partials/_header/_scripts.html' %}
+
+  {# Favicon #}
+  {% include '../_partials/_header/_favicons.html' %}
+
+</head>
+<body id="home" class="{{ bodyClass is defined ? bodyClass ~ '  ' : '' }}">
+
+<div class="m-appWrapper">
+
+  <header class="m-appHeader">
+  {% block appHeader %}
+    Header
+  {% endblock %}
+  </header>
+
+  <div class="m-appContent">
+  {% block appContent %}
+    Content
+  {% endblock %}
+  </div>
+
+  <footer class="m-appFooter">
+  {% block appFooter %}
+    Footer
+  {% endblock %}
+  </footer>
+
+</div>
+
+{# Include Scripts, Fonts, Google Analyticy #}
+{% include '../_partials/_footer/_scripts.html' %}
+</body>
+</html>
