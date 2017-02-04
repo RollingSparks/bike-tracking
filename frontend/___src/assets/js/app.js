@@ -13,10 +13,8 @@ if (_debug === true) {
 }
 
 
-
 // Vue Stuff
 import Vue from 'vue'
-//import hello from './vue/_helloworld.vue'
 import L from 'leaflet'
 import './vendor/moving_marker'
 import generateDummyBikeData from './scripts/bike_data_generator'
@@ -112,7 +110,7 @@ var redraw = function() {
   }};
 
 var MapContainer = {
-  template: '<div><div id="map">Map Container</div><div class="map-nav"><ul><li  v-for="(bike, index) in bikes" class="map-nav__item" v-bind:class="{visible: disabledClass}"  v-on:click="toggle(index)" v-bind:style="bike"></li></ul></div></div>',
+  template: '<div><div id="map">Map Container</div><div class="map-nav"><ul><li  v-for="(bike, index) in bikes" class="map-nav__item" v-bind:class="{disabledClass: bike.active}"  v-on:click="toggle(index)" v-bind:style="bike"></li></ul></div></div>',
   data: function(){
     var map;
     return {
@@ -151,8 +149,29 @@ L.tileLayer(
 
 import './scripts/slider.js'
 
+// Vue Stuff
+import VueResource from 'vue-resource'
+import status from './vue/TTNApi.vue'
+Vue.use(VueResource)
+
+var vm = new Vue({
+  el: '#api',
+  components: {
+    status
+  }
+});
+
+
+console.log(vm)
+vm.message = 'new message' // change data
+vm.$el.textContent === 'new message' // false
+Vue.nextTick(function () {
+  console.log('were are here')
+  vm.$el.textContent === 'new message' // true
+})
+
 // Polyfills
-import "babel-polyfill"
+import 'babel-polyfill'
 import 'svgxuse'
 
 // Scripts
