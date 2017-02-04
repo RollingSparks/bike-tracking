@@ -1,7 +1,6 @@
 /**
  * Bundle Scripts
  */
-
 // Debugging
 const _debug = true
 window._debug = _debug
