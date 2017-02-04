@@ -1,29 +1,33 @@
 {#
-  Home Page
-  --------------------------------------------------
+Home Page
+--------------------------------------------------
 
-  This is your Homepage!
+This is your Homepage!
 #}
 
 {% extends "_layouts/_master.html" %}
 {% set bodyClass = "home" %}
 {% block appTitle %}
-  Home
+Home
 {% endblock %}
 
 
+{% block appHeader %}
+{% endblock %}
 
 {% block appContent %}
-  <h1>{{ index.headline }}</h1>
-  <p>
-    {{ index.intro }}
-  </p>
+<div id="app">
+  <map-container></map-container>
+</div>
 
-  
-  <div id="api" class="vue">
-    <status></status>
-  </div>
-  
+<input type="text" id="example_id" name="example_name" value="" class="map-slider"/>
+
+<div id="api" class="vue">
+  <status></status>
+</div>
+
 
 {% endblock %}
 
+{% block appFooter %}
+{% endblock %}
