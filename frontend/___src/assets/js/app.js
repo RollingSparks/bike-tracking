@@ -16,7 +16,7 @@ if (_debug === true) {
 import Vue from 'vue'
 import L from 'leaflet'
 import './vendor/moving_marker'
-import generateDummyBikeData from './scripts/bike_data_generator'
+import generateMixedBikeData from './scripts/bike_data_generator'
 import moment from 'moment'
 
 var createMarker = function(){
@@ -30,9 +30,9 @@ var createMarker = function(){
   });
 }
 
-var bikes = generateDummyBikeData(4);
-var from = moment().subtract(3, "days").format("X");
-var to = moment().subtract(0, "days").format("X");
+var from = moment().subtract(3, "days").format('X');
+var to = moment().subtract(0, "days").format('X');
+var bikes = generateMixedBikeData(3, from, to);
 var lines = [];
 var markers = [];
 
@@ -147,18 +147,6 @@ L.tileLayer(
 
 
 import './scripts/slider.js'
-
-// Vue Stuff
-import VueResource from 'vue-resource'
-import status from './vue/TTNApi.vue'
-Vue.use(VueResource)
-
-var vm = new Vue({
-  el: '#api',
-  components: {
-    status
-  }
-});
 
 // Polyfills
 import 'babel-polyfill'
