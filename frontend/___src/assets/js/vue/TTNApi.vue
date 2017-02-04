@@ -2,7 +2,9 @@
   <div>
       <button v-on:click="getLocationData()">Get Data</button>
       <div class="status" v-if="locationData">
-        <p>{{ locationData }}</p>
+        <li v-for="location in locationData">
+            {{ location.time }}: {{ location.lat }} | {{ location.lng }}
+          </li>
       </div>
     </div>
   </template>
@@ -11,20 +13,37 @@
   export default {
     data() {
       return {
-        locationData: ''
+        locationData: [],
+        message: '123'
       }
     },
     methods: {
       getLocationData() {
-        this.$http.get('https://rollingsparks.data.thethingsnetwork.org/api/v2/query', {headers: {'Authorization': 'key ttn-account-v2.OER_mr4qDRg8lxRiZjP2swhfuxr4EmoK95dt1BzoHfM'}}).then(
-          function(response){
-            console.log(response)
-          },
-          function(error){
-            console.log(error)
-          }
-        )
+        this.$http.get('http://localhost:8080/api/v2/query',
+          {
+            params: {
+              last: '7d'
+            }
+          }).then(response => {
+            var rawDataList = JSON.parse(response.data)
+            for (var i = 0; i < rawDataList.length; i++) {
+                var rawData = rawDataList[i]
+                console.log(rawData)
+                if(Date.parse(rawData.time) > Date.parse('2017-02-04T10:14:49.532900134Z') && rawData.lat != 0 && rawData.lng != 0) {
+                  this.locationData.push(rawData)
+                }
+            }
+            var self = this;
+            setTimeout(function() {
+                 self.getLocationData()
+             }, 10000);
+          }, response => {
+            // error callback
+        })
       }
+    },
+    mounted: function () {
+        this.getLocationData()
     }
   }
   </script>
