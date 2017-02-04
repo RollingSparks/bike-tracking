@@ -77,6 +77,12 @@ var toggleBike = function (index) {
   return;
 };
 
+var updateSlider = function(){
+  //slider.update({
+    //min: 100000
+  //});
+}
+
 var redraw = function() {
   clean();
   for(var i = 0; i < bikes.length; i++){
@@ -97,6 +103,7 @@ var redraw = function() {
       if (positions.length >= 2){
         var polyline = L.polyline(positions, {
           color: bike.color,
+          weight: 2,
         }).addTo(map);
         lines.push(polyline);
 
@@ -110,7 +117,7 @@ var redraw = function() {
   }};
 
 var MapContainer = {
-  template: '<div><div id="map">Map Container</div><div class="map-nav"><ul><li  v-for="(bike, index) in bikes" class="map-nav__item" v-bind:class="{disabledClass: bike.active}"  v-on:click="toggle(index)" v-bind:style="bike"></li></ul></div></div>',
+  template: '<div><div id="map">Map Container</div><div class="map-nav"><ul><li  v-for="(bike, index) in bikes" class="map-nav__item" v-bind:class="{disabled: !bike.visible}"  v-on:click="toggle(index)" v-bind:style="bike"></li></ul></div></div>',
   data: function(){
     var map;
     return {
@@ -169,6 +176,8 @@ Vue.nextTick(function () {
   console.log('were are here')
   vm.$el.textContent === 'new message' // true
 })
+
+redraw();
 
 // Polyfills
 import 'babel-polyfill'

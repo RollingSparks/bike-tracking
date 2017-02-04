@@ -3,14 +3,14 @@ import moment from 'moment'
 var COLORS = ['#268F26', '#215A70', '#C78D4D', '#C74D4D', '#C7BC4D', '#9FBD49', '#943A7B', '#5C3B87'];
 var OFFSET = 0.005
 
-var generateDummyRecords = function(num, offset){
+var generateDummyRecords = function(days, measurements, offset){
     var coordinates = [];
-    for(var i = 0; i < num; i++){
+    for(var i = 0; i < measurements; i++){
         coordinates.push( {
-            timeStamp: moment().subtract(num - i - 1, "day").format("X"),
+            timeStamp: moment().subtract(i * 5, "hour").format("X"),
             position: [
-            47.410850 + i%2 * OFFSET - OFFSET * offset * 2,
-            8.546487 + i*OFFSET
+            47.410850 + offset * 0.01,
+            8.546487 - i*OFFSET
         ],
         })
     }
@@ -24,7 +24,7 @@ var generateDummyBikeData = function(num){
             name: "Bike " + i,
             color: COLORS[i%COLORS.length],
             backgroundColor: COLORS[i%COLORS.length],
-            records: generateDummyRecords(10, i),
+            records: generateDummyRecords(10, 500, i),
             visible: true,
             disabledClass: 'map-nav__item--disabled'
         });

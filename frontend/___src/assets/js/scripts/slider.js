@@ -2,9 +2,9 @@ import '../vendor/ion.rangeSlider.js'
 import $ from 'jquery'
 import moment from 'moment'
 
-var slider = $("#example_id").ionRangeSlider({min: 0,
+$("#slider").ionRangeSlider({min: 0,
   type: "double",
-  min: +moment().subtract(3, "day").format("X"),
+  min: +moment().subtract(6, "day").format("X"),
   max: +moment().format("X"),
   from: +moment().subtract(1, "day").format("X"),
   to: +moment().format("X"),
@@ -16,3 +16,4 @@ var slider = $("#example_id").ionRangeSlider({min: 0,
     updateFrom(data.from);
   }
 });
+window.slider = $("#slider").data("ionRangeSlider");
