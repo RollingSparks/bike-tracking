@@ -1,7 +1,6 @@
 /**
  * Bundle Scripts
  */
-
 // Debugging
 const _debug = true
 window._debug = _debug
@@ -24,15 +23,6 @@ var vm = new Vue({
     status
   }
 });
-
-
-console.log(vm)
-vm.message = 'new message' // change data
-vm.$el.textContent === 'new message' // false
-Vue.nextTick(function () {
-  console.log('were are here')
-  vm.$el.textContent === 'new message' // true
-})
 
 // Polyfills
 import 'babel-polyfill'
