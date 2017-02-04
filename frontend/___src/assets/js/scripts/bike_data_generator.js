@@ -7,7 +7,7 @@ var generateDummyRecords = function(days, measurements, offset){
     var coordinates = [];
     for(var i = 0; i < measurements; i++){
         coordinates.push( {
-            timeStamp: moment().subtract(i * 5, "hour").format("X"),
+            timeStamp: moment().subtract(i * 0.01, "hour").format("X"),
             position: [
             47.410850 + offset * 0.01,
             8.546487 - i*OFFSET
@@ -39,7 +39,7 @@ var generateMixedBikeData = function(num, from, to){
       name: "Bike " + i,
       color: COLORS[i%COLORS.length],
       backgroundColor: COLORS[i%COLORS.length],
-      records: generateDummyRecords(10, i),
+      records: generateDummyRecords(10, 500, i),
       visible: true,
       disabledClass: 'map-nav__item--disabled'
     });
@@ -63,7 +63,6 @@ var getRealRecords = function(from, to) {
     xhttp.setRequestHeader("Content-type", "application/json")
     xhttp.send()
     var rawDataList = JSON.parse(xhttp.responseText);
-    console.log(rawDataList)
     for (var i = 0; i < rawDataList.length; i++) {
       var rawData = rawDataList[i]
       //
