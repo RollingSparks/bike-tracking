@@ -12,6 +12,39 @@
 @import 'trumps';
 
 #map{
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
+  z-index: 0;
+}
+
+.irs{
+  //z-index: 1;
+  margin-top: -100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.map-nav{
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  position: absolute;
+}
+
+.map-nav__item{
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  background: blue;
+  border-radius: 100px;
+  display:block;
+  background: url(../../assets/images/svg/single/bicycle_white.svg);
+  background-size: 35px 35px;
+  background-color: green;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.map-nav__item--disabled {
 }
