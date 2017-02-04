@@ -78,7 +78,7 @@ var toggleBike = function (index) {
 
 var updateSlider = function(){
   //slider.update({
-    //min: 100000
+  //min: 100000
   //});
 }
 
@@ -107,7 +107,7 @@ var redraw = function() {
         lines.push(polyline);
 
         //var marker = L.Marker.movingMarker(positions, timeDeltas, {
-        //icon: createMarker()
+          //icon: createMarker()
         //}).addTo(map);
         //marker.start();
         //markers.push(marker);
